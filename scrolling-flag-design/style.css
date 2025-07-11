@@ -1,0 +1,109 @@
+.timeline-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.timeline {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff00cc, #3333ff);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.card-with-icon{
+  position: relative;
+  height: 240px;
+  margin-bottom: 50px;
+}
+
+.money-icon {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  transition: top 0.2s linear;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1090/1090835.png'); /* money icon */
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.timeline-card {
+  font-size: 15px;
+  position: absolute;
+  top: 0;
+  background: #f5f2ff;
+  padding: 20px;
+  /* margin: 60px 0; */
+  width: 280px;
+  border-radius: 10px;
+  border: 2px solid #020009;
+  box-shadow: 5px 5px rgba(39, 29, 134, 0.1);
+  transition: top 0.3s ease-out, opacity 0.3s;
+  z-index: 2;
+}
+
+.timeline-card.left {
+  left: -50px;
+}
+
+.timeline-card.right {
+  left: 520px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .card-with-icon {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0; /* reduced */
+    position: relative;
+    height: auto; /* allow natural height */
+  }
+
+  .money-icon {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-left: 20px;
+    margin-right: 10px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  .timeline-card {
+    position: relative;
+    left: auto !important;
+    transform: none !important;
+    width: 75%;
+    margin-left: auto;
+    margin-right: 10px;
+    top: 0 !important;
+    padding: 15px;
+    font-size: 14px;
+    transition: none;
+  }
+
+  .line {
+    left: 25px;
+    transform: none;
+  }
+}
+
