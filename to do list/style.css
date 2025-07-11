@@ -1,0 +1,33 @@
+* {
+    text-align: center;
+    background-position: center;
+    
+}
+#To-Do-List {
+    border: 2px solid black;
+    min-height: 50px;
+    
+}
+h1{
+    text-decoration: underline;
+}
+ul {
+    list-style-type: none;
+    border: 2px solid black;
+    margin: 100px;
+    min-height: 50px;
+}
+/* li {
+    border: 2px solid black;
+    width: 50px 10px;
+    padding: auto;
+} */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
