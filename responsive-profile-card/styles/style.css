@@ -1,24 +1,50 @@
 .body {
-    background-image: linear-gradient(red, yellow);
-
+    font-family: Arial, sans-serif;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 .profile-card {
-    background: linear-gradient(180deg, #fffbe7, #d8b0bc);
+    background: linear-gradient(135deg, #fffbe7, #d8b0bc);
     padding: 40px;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 800px;
 } 
 .profile-image {
-    max-width: 400px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     height: 100%;
 }
 .profile-image img{
     border-radius: 0%;
     width: 100%;
+}
 
+.profile-info {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin: 50px;
+}
+.social-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.social-links li {
+    list-style: none;
 }
