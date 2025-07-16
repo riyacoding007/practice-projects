@@ -3,5 +3,5 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-
+    background-color: linear-gradient(135deg, #fff, #f0f0f0);
 }
