@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(hsl(0, 12%, 95%), hsl(0, 1%, 67%));
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+}
+#changeTextButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#changeTextButton:hover {
+    background-color: hsl(0, 0%, 99%);
+}
+#textToChange{
+    display: none;
+}
