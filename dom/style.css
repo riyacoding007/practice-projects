@@ -18,12 +18,10 @@
 #changeTextButton {
     background-color: transparent;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-}
-#changeTextButton:hover {
-    background-color: hsl(0, 0%, 99%);
 }
 #textToChange{
     display: none;
