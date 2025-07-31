@@ -1,25 +1,9 @@
 .bubble-box{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: radial-gradient(circle at 30% 30%, #aeefff 60%, #4fc3f7 100%);
     border: 1px solid #b3e5fc;
     box-shadow: 0 4px 16px 0 rgba(79,195,247,0.3), 0 0 0 2px #e1f5fe inset;
     border-radius: 50%;
     position: absolute;
-bottom: -100px; /* start below screen */
-    animation: rise 10s linear infinite;
-    animation-name: example;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
-    
-@keyframes example {
-    0% {
-        transform: translateY(100%);      /* Start below */
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-100vh); /* Go up past top */
-        opacity: 0;
-    }
-}
+} 
