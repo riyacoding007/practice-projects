@@ -1,0 +1,673 @@
+ /* 
+const words = ["dog", "cat", "dog", "bird", "cat", "dog"];
+const map = new Map();
+const dup = [];
+
+for (let word of words){
+    if(map.has(word)){
+        map.set(word,map.get(word) + 1);  // increment count of value
+            if(map.get(word) === 2){
+                dup.push(word);                 
+            }
+    }
+    else{
+        map.set(word, 1);
+    }
+}
+console.log(dup);
+
+const str = "aabccdee";
+const map1 = new Map();
+
+for (let char of str) {
+    if (map1.has(char)) {
+        map1.set(char, map1.get(char) + 1);
+    } else {
+        map1.set(char, 1);
+    }
+}
+
+console.log(map1);
+
+
+console.log(null || "user")
+
+console.log(true && "X");
+
+console.log(false && "X");
+
+console.log(true || "X");
+
+console.log(false || "X");
+
+
+let number = "o";
+
+// execute unless the number is not a number
+if (!isNaN(number)) {      
+console.log("the square of the number is " + number * number);    // 16
+}else {
+    console.log("the value is not a number");
+}
+
+
+console.log("the square of the number is " + Math.pow(number, 2));   // num * num = answer
+
+console.log("the square root of the number is " + Math.sqrt(number));
+
+let number = Number(prompt("pick a number"));
+if(!isNaN(number)) {
+    console.log("square root is " + number * number);
+}else {
+    console.log("hey, that's not a number");
+}
+
+
+let num = prompt("pick a number");
+
+if (num < 10 ){
+    console.log("small");
+}else if(num < 100) {
+    console.log("medium");
+}else {
+    console.log("large");
+}   
+
+    while loop
+let number = 0;
+while(number <= 12) {
+    console.log(number);
+    number = number + 2 ;
+}
+
+         while loop         counter binding
+let result = 1;
+let count = 0;
+while(count < 10) {
+    result = result * 2;
+    count = count + 1;
+}
+console.log(result);
+
+
+for loop 
+
+for( let i = 0; i <= 12; i = i + 2) {
+    console.log(i);
+}
+
+let result = 1;
+for (let i = 0; i < 10; i++) {
+    result = result * 2
+}
+console.log(result);
+
+do loop
+let yourName;
+do {
+    yourName = prompt("Who are you?");
+} while (!yourName);
+
+console.log(yourName);
+
+
+for(let i = 15; ; i++) {
+    if (i % 6 == 0) {
+        console.log(i);
+        break;  // exit the loop when a number is found
+    }
+}// 18
+
+
+
+
+while loop
+let i;
+while(Number(i) !== 0) {
+    i = prompt("Enter a number (0 to exit): ");
+    console.log(i);
+}
+
+for loop
+for(let i;Number(i) !== 0;) {
+    i = prompt("Enter a number (0 to exit): ");
+    console.log(i);
+}
+
+for loop
+
+let scores = [90,80,70,60,50];
+
+for (let i = 0; i < scores.length; i++) {
+    console.log("Score " + (i + 1) + " is " + scores[i]);
+}
+
+while loop
+let scores = [90,80,70,60,50];
+let i = 0;
+while (i < scores.length) {
+    console.log("Score " + (i + 1) + " is " + scores[i]);
+    i++;
+}
+
+
+switch (prompt("What is the whether like?")) {
+    case "rainy":
+        console.log("Take an umbrella");
+        break;
+    case "sunny":
+        console.log("Wear sunglasses");      
+    case "cloudy":
+        console.log("Go outside");
+        break;
+    default:
+        console.log("Unknown whether type");
+        break;
+}
+
+prompt("What is the weather like?") === "rainy" ? console.log("Take an umbrella") :
+prompt("What is the weather like?") === "sunny" ? console.log("Wear sunglasses") :
+prompt("What is the weather like?") === "cloudy" ? console.log("Go outside") : console.log("Unknown whether type");
+
+whether = prompt("What is the weather like?")
+if (whether === "rainy") {
+    console.log("Take an umbrella");
+} else if (whether === "sunny") {
+    console.log("Wear sunglasses");
+} else if (whether === "cloudy") {
+    console.log("Go outside");
+} else {
+    console.log("Unknown whether type");
+}
+
+
+let num;
+for (let i = 1; i <= 7; i++) {
+    num = i;
+    console.log("#".repeat(num));
+}
+
+
+
+
+let num1 = 0;
+for (let i = 1; i <= 7; i++) {
+    let str = "";
+    for (let j = 1; j <= i; j++) {
+        str += "#";
+    }
+    console.log(str);
+}
+*/
+
+
+// for(let i = 1; i <= 100; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//         console.log("FizzBuzz");
+//     }else if (i % 3 === 0){
+//         console.log("Fizz");
+//     }else if (i % 5 === 0){
+//         console.log("Buzz");
+//     }else {
+//         console.log(i);
+//     }
+// }
+
+
+// for(let i = 1; i <= 100; i++) {
+// (i % 3 === 0 && i % 5 === 0) ? console.log("FizzBuzz") :
+// (i % 3 === 0) ? console.log("Fizz") :   
+// (i % 5 === 0) ? console.log("Buzz") : console.log(i);
+// }
+
+
+
+// for (let i = 1; i <= 7; i++) {
+//     let str = "";
+//     for (let j = 1; j <= i; j++) {
+//         str += "#";
+//     }
+//     console.log(str);
+// }
+
+
+
+// for(let i = 1; i <= 8; i++) {
+//     let str = "";
+//     for(let j = 1; j <= 8; j++) {
+//         if ((i + j) % 2 === 0) {
+//             str += "#";  // even sum of indices
+//         } else {
+//             str += " ";  // odd sum of indices
+//         }
+//     }
+//     console.log(str);
+// }
+
+
+// const square = function(x) {
+//     return x * x;
+// }
+
+
+// console.log(square(2));
+
+
+// const power = function(base, exponent) {
+//     let result = 1;
+//     for ( let i = 0; i < exponent; i++) {
+//         result = result * base;
+//         console.log(result);
+//     }
+//     console.log("final result is " + result);
+//     return result;
+// }
+
+// power(2,10);
+
+
+// let x = 10;
+// if (true) {
+//     let y = 20;
+//     var z = 30;    /// visible throughout the global function if written in a scope, and not in a function
+//     console.log(x + y + z);
+// }
+// console.log(x + z);
+
+// // inner most binding hides the outer one 
+// const halve = function(n) {
+//     return n/2;
+// }
+
+
+// let n = 10;
+// console.log(n/2);  // Outputs: 5
+// console.log(halve(100));  // Outputs: 50
+
+// let launch = function() {
+//     missileSystem.launch("now");
+// };
+// if (safeMode) {
+//     launch = function() {
+//         console.log("Launch aborted");   // do nothing
+//     }
+// }
+
+
+
+//   const square1 = (x) => { return x * x; }
+//   const square2 = x => x*x;  // implicit return   
+
+//     closure because of lexical funciton and memory reference 
+//     beacuse   it removes from the stack      - the call stack
+// function wrapValue(n) {
+//     let local = n;
+//     return () => local;    
+// }
+
+// const wrap1 = wrapValue(1);
+// const wrap2 = wrapValue(2);
+
+// console.log(wrap1());
+// console.log(wrap2());
+
+
+
+// function minus (a, b) {
+//     if (b === undefined) return -a;
+//     return a - b;
+// }
+
+// console.log(minus(10));
+// console.log(minus(10, 5));
+
+// // optional arguemnts 
+// const square = x => x * x;
+// console.log(square(4, 2399999));  // Outputs: 16
+
+
+// const chicken = () => egg();
+// const egg = () => chicken();
+// console.log(chicken() + ("came first"));  
+
+
+
+// let power = (base, exponent = 2) => {
+//     let result = 1;
+//     for (let i = 0; i < exponent; i++) {
+//         result *= base;
+//     }
+//     return result;
+// };
+
+// console.log(power(2));
+// console.log(power(2,3));
+
+
+// function multiplier(factor) {
+//     return number => number * factor;
+// }
+
+// let twice =  multiplier(2);
+// console.log(twice(5));
+
+// function findSolution(target) {
+//     function find(current, history) {
+//         if(current === target) {
+//             return history;
+//         }else if(current > target){
+//             return null;
+//         }else {
+//             return find(current + 5, `(${history} + 5)`) ||
+//             find(current * 3, `(${history} * 3)`);
+//         }
+//     }
+//     return find(1, "1");
+// }    
+
+
+// console.log(findSolution(24));
+
+
+
+// function printFarmInventary(cows, chickens) {
+//     let cowString = String(cows);
+//     while (cowString.length < 3) {
+//         cowString = "0" + cowString;
+//     }
+//     console.log(`${cowString} Cows`);
+
+//     let chickenString = String(chickens);
+//     while (chickenString.length < 3) {
+//         chickenString = "0" + chickenString;
+//     }
+//     console.log(`${chickenString} Chickens`);
+// }
+
+// printFarmInventary(7, 11);
+
+
+
+
+// function printZeroPaddedWithLabel(number, label) {
+//     let numberString = String(number);
+//     while (numberString.length < 3) {
+//         numberString = "0" + numberString;
+//     }
+
+//     console.log(`${numberString} ${label}`);
+// }
+// printZeroPaddedWithLabel(7);
+
+// function printFarmInventary1(cows, chickens, pigs) {
+//     printZeroPaddedWithLabel(cows, "Cows");
+//     printZeroPaddedWithLabel(chickens, "Chickens");
+//     printZeroPaddedWithLabel(pigs, "Pigs");    
+// }
+// printFarmInventary1(7, 11, 3);
+
+
+// function zeroPad(number, width) {
+//     let string = String(number);
+//     while (string.length < width) {
+//         string = "0" + string;
+//     }
+//     return string;
+// }
+
+// function printFarmInventary(cows, chickens, pigs) {
+//     console.log(`${zeroPad(cows, 3)} cows`);
+//     console.log(`${zeroPad(chickens, 3)} Chickens`);
+//     console.log(`${zeroPad(pigs, 3)} Pigs`);
+// }
+// printFarmInventary(7, 11, 3);
+
+
+// const f0 = function(a) {
+//     console.log(a + 2);
+// }
+
+
+// function f1(a) {
+//     console.log(a + 2);
+// }
+
+// const f2 = (a) => a + 2;
+
+
+// let findMin = (a, b) => a < b ? a : b; 
+
+// console.log(findMin(9, 7)); 
+
+
+// function isEven(n) {
+
+//     if (n < 0) return isEven(-n);    // convert negative to positive
+
+//     if (n == 0) {
+//         return true;
+//     }else if (n == 1) {
+//         return false;
+//     }else {
+//         return isEven(n - 2);
+//     }
+// }  
+// console.log(isEven(-2));
+
+
+// function countBs(string) {
+//     let s = String(string);
+//     let count = 0;
+//     for(let i = 0; i < s.length; i++){
+//         if(string[i] == "B"){
+//             count++;
+//         }else{
+//             count;
+//         }
+//     }
+//     return count;
+// }
+// console.log(countBs("hvbjBBBBb"));
+
+
+
+// let listOfNumbers = [2, 3, 5, 7, 11];
+// console.log(listOfNumbers[3]);
+// console.log(listOfNumbers[0]);
+// console.log(listOfNumbers[3-2]);
+
+
+// let doh = "Doh";
+// console.log(typeof doh.toUpperCase);
+// console.log(doh.toUpperCase());
+
+
+//   let sequence = [1, 2 , 3];
+//   sequence.push(4);
+//   sequence.push(5);
+//   console.log(sequence);
+//   console.log(sequence.pop());
+//   console.log(sequence);
+//   console.log(sequence.push(7, 8));    // 6
+//   console.log(sequence);
+
+
+// let day1 = {
+//     squirrel : false,
+//     events : ["work", "touched tree", "pizza", "running"]
+// };
+// console.log(day1.squirrel);
+// console.log(day1.events);
+// console.log(day1.wolf);
+// day1.wolf = false;
+// console.log(day1.wolf);
+
+
+// let key = "touched tree";
+// let description = {
+//     work : "went to work",
+//     "touched tree" : "Touched a tree"
+// }
+// console.log(description["touched tree"]);
+// console.log(description[key]); // also works
+
+
+// let anObject = {left : 1, right : 2, x: 0, y: 1, z: 2};
+// console.log(anObject.left);
+// delete anObject.left;
+// console.log(anObject.left);
+// console.log("left" in anObject);
+// console.log("right" in anObject);
+
+
+// console.log(Object.keys(anObject));
+// Object.assign(anObject, {y: 0});
+// console.log(anObject);
+
+
+// let journal = [
+//     {
+//         events: ["work", "touched tree", "pizza", "running", "telivision"],
+//         sqirrel: false
+//     },
+//     {
+//         events: ["work", "icecrea", "cauliflower", "touched tree", "brushed teeth"],
+//         sqirrel: false
+//     }, 
+//     {
+//         events: ["work", "touched tree", "pizza", "running", "telivision"],
+//         sqirrel: true
+//     }
+// ];
+
+// // for (let entry of journal) {
+// //   console.log("Events:", entry.events);
+// //   console.log("Squirrel?:", entry.sqirrel);
+// // }
+
+// // console.log(journal);
+
+// // console.log(journal[0]);
+// // console.log(journal[0].events);
+// // console.log(journal[0].events[2]);
+
+
+// // let object1 = {value: 10};
+// // let object2 = object1;
+// // let object3 = {value: 10};
+
+// // console.log(object1 === object2);
+// // console.log(object1 === object3);
+
+// // console.log(object1.value = 15);
+// // console.log(object2.value);
+// // console.log(object3.value);
+
+
+// function phi(table){
+//     return (table[3] * table[0] - table[2] * table[1]) / 
+//     Math.sqrt((table[2] + table[3]) * 
+//     (table[0] + table[1]) * 
+//     (table[1] + table[3]) *
+//     (table[0] + table[2]));
+// }
+
+// console.log(phi([76, 9, 4, 1]));  
+
+
+// function tableFor(event, journal) {
+//     let table = [0, 0, 0, 0];
+//     for(let i = 0; i < journal.length; i++) {
+//         let entry = journal[i], index = 0;
+//         if (entry.events.includes(event)) index += 1;
+//         if (entry.squirrel) index += 2;
+//         table[index] += 1;
+//     }
+//     return table;
+// }
+
+// console.log(tableFor("pizza", journal));
+
+// for(let i = 0; i < journal.length; i++) {
+//     let entry = JOURNAL[i];
+// }
+
+// for(let entry of JOURNAL) {
+//     console.log(`${entry.events.lenngth} events.`);
+// }
+
+// let num = prompt("Enter a number: ");
+// function triple() {
+//     num *= 3;
+//     return num;
+// }
+// console.log(triple());
+
+// // 1
+// let name = prompt("Enter your name");
+// greet("Hello," + 'name');
+
+// // 2
+// function greet() {
+//   let name = prompt("Enter your name");
+//   console.log(`Hello, ${name}!`);
+// }
+// greet();
+
+// // 3
+// let areaOfRectangle = (width,height) => width*height;
+// console.log(areaOfRectangle(5,6));
+ 
+// // 4
+// let convertToMinutes = (hours) => hours*60;
+// console.log(convertToMinutes(2));
+
+// // 2.1        Arrow functions are great for small logic and anonymous callbacks.
+
+// //       Normal functions are better when you want function hoisting or more traditional readability.
+// const isGreater = (num1,num2) => num1 > num2 ? num1 : num2;
+// console.log(isGreater(2,3));   
+
+// function isGreater1(num1,num2) {
+//     num1 > num2 ? console.log(num1) : console.log(num2);
+// }
+// isGreater1(2,3);
+
+// function isGreater2(num1,num2) {
+//     console.log(num1 > num2 ? num1 : num2);
+// }
+// isGreater2(2,3);
+
+// function isGreater3(num1,num2) {
+//     if(num1 > num2){
+//         return num1;
+//     }else {
+//         return num2;
+//     }
+// }
+// console.log(isGreater3(2,3));
+
+// function isGreater4(num1,num2) {
+//     if(num1 > num2){
+//         console.log(num1);
+//     }else {
+//         console.log(num2);
+//     }
+// }
+// isGreater4(2,3);
+
+
+// function absoluteValue(num) {
+//     if(num < 0){
+//         return -num;
+//     }else {
+//         return num;
+//     }
+// }
+// console.log(absoluteValue(-1));
+
+
+// function lastChar(str){
+//     return str.charAt(str.length - 1);
+// }
+// console.log(lastChar("riya"))
