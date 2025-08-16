@@ -698,3 +698,50 @@ for (let i = 1; i <= 7; i++) {
 //     return result;
 // }
 // console.log(stringRepeat("riya", 5));  
+
+
+// function Twice1() {
+//     return 5 * 5;
+// }
+// function doTwice1(func) {
+//     console.log(func());
+//     console.log(func());
+// }
+// doTwice1(Twice1);
+
+// function Twice2() {
+//     console.log(5 * 5);
+// }
+// function doTwice2(func) {
+//     func();
+//     func();
+// }
+// doTwice2(Twice2);  
+
+
+// function Twice3() {
+//     return 5 * 5;
+// }
+// function doTwice3(func) {
+//     return func();
+//     return func();
+// }
+// console.log(doTwice3(Twice3));
+
+
+// function Twice4() {
+//     return 5 * 5;
+// }
+// function doTwice4(func) {
+//     console.log(func());
+//     return func();
+// }
+// console.log(doTwice4(Twice4));
+
+// const add = (a, b) => a + b;
+
+// function calculator(num1, num2, func) {
+//     return func(num1, num2);
+// }
+// console.log(calculator(3, 2, add));
+
