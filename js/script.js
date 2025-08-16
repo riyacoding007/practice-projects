@@ -671,3 +671,30 @@ for (let i = 1; i <= 7; i++) {
 //     return str.charAt(str.length - 1);
 // }
 // console.log(lastChar("riya"))
+
+
+// const canVote = (age) => age >= 18 ? true : false;
+// console.log(canVote(18));
+
+// const canVote1 = (age) => age >= 18 ;
+// console.log(canVote1(19));
+
+
+// function circleInfo(radius) {
+//     let area = Math.PI * radius * radius;
+//     let circumference = 2 * Math.PI * radius;
+//     return {
+//         area : area,
+//         circumference : circumference};
+// }
+// console.log(circleInfo(5));   //31.41592653589793
+
+
+// function stringRepeat(str, num) {
+//     let result = "";
+//     for(i = 0; i < num; i++){
+//         result += str;
+//     }
+//     return result;
+// }
+// console.log(stringRepeat("riya", 5));  
