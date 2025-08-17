@@ -15,7 +15,7 @@ for (let word of words){
     }
 }
 console.log(dup);
-
+ 
 const str = "aabccdee";
 const map1 = new Map();
 
@@ -744,4 +744,40 @@ for (let i = 1; i <= 7; i++) {
 //     return func(num1, num2);
 // }
 // console.log(calculator(3, 2, add));
+
+// function countDown(num) {
+//     if (num <= 1){
+//         console.log(num);
+//     }else{
+//         console.log(num);
+//         countDown(num -= 1);
+        
+//     }
+// }
+// countDown(10);
+
+
+
+// function factorial(num) {
+//     if(num === 0 || num === 1) {return 1}
+//     else {
+//         return num * factorial(num - 1);
+//     }
+// } 
+// console.log(factorial(0));
+
+
+// function isEven(num) {
+//     if (num === 1) {
+//         console.log("odd");
+//     }else if (num === 0) {
+//         console.log("even");
+//     }else {
+//         return isEven(num-2);
+//     }
+// }
+// isEven(11);
+
+
+
 
