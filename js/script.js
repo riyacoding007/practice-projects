@@ -778,6 +778,61 @@ for (let i = 1; i <= 7; i++) {
 // }
 // isEven(11);
 
+// function reverseString(str) {
+//     if(str === "") return "";
+//     return reverseString(str.slice(1)) + str[0];
+// }
+// console.log(reverseString("riya"));
 
+
+// function countBs(str) {
+//     let count = 0;
+//     for(i = 0; i < str.length; i++){
+//         if(str === "") return 0;
+//         if (str[i] === "b"){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(countBs("boby"));
+
+
+// function countChar(str, char) {
+//     let count = 0;
+//     for(i = 0; i < str.length; i++){
+//         if (str[i] === char){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(countChar("yayyyyyy", "y"));
+
+
+
+// function countBs1(str) {
+//     let count = 0;
+//         if(str === "") return 0;
+//         countBs1("bobby") = (firstCharIsB ? 1 : 0) + countBs(+ str[0])
+//     return count;
+// }
+
+// console.log(countBs1("bobby"));
+
+// function countBs2(str) {
+//     // base case
+//     if (str === "") return 0;
+
+//     // check first character
+//     let firstChar = str[0] === "b" ? 1 : 0;
+
+//     // recursive call on the rest of the string
+//     return firstChar + countBs2(str.slice(1));
+// }
+
+// console.log(countBs2("bobby")); // 3
 
 
