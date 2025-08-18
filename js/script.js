@@ -836,3 +836,20 @@ for (let i = 1; i <= 7; i++) {
 // console.log(countBs2("bobby")); // 3
 
 
+function wordStats(str) {
+    // { wordCount: <total number of words>, charCount: <total characters without spaces>, averageWordLength: <average characters per word> }
+
+    let array = str.split(" ");
+    let wordCount = array.length;
+    array = str.split(" ").join("");
+    let charCount = array.length;
+
+    let averageWordLength = charCount/wordCount;
+
+    return {
+        wordCount: wordCount,
+        charCount: charCount,
+        averageWordLength: averageWordLength
+    }
+}
+console.log(wordStats("I am Riya"));
