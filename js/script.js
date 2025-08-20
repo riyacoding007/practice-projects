@@ -836,20 +836,137 @@ for (let i = 1; i <= 7; i++) {
 // console.log(countBs2("bobby")); // 3
 
 
-function wordStats(str) {
-    // { wordCount: <total number of words>, charCount: <total characters without spaces>, averageWordLength: <average characters per word> }
+// function wordStats(str) {
+//     // { wordCount: <total number of words>, charCount: <total characters without spaces>, averageWordLength: <average characters per word> }
 
-    let array = str.split(" ");
-    let wordCount = array.length;
-    array = str.split(" ").join("");
-    let charCount = array.length;
+//     let array = str.split(" ");
+//     let wordCount = array.length;
+//     array = str.split(" ").join("");
+//     let charCount = array.length;
 
-    let averageWordLength = charCount/wordCount;
+//     let averageWordLength = charCount/wordCount;
 
-    return {
-        wordCount: wordCount,
-        charCount: charCount,
-        averageWordLength: averageWordLength
-    }
-}
-console.log(wordStats("I am Riya"));
+//     return {
+//         wordCount: wordCount,
+//         charCount: charCount,
+//         averageWordLength: averageWordLength
+//     }
+// }
+// console.log(wordStats("I am Riya"));
+
+
+
+// // array and objects  
+   
+// // array methtods - shift and unshift 
+
+// let todoList = [];
+// function remember(task) {    // add 
+//     todoList.push(task);
+// }
+// function remove() {    // reomve from back 
+//     todoList.pop();
+// }
+// function getTask() {   // remove from fornt
+//     return todoList.shift();
+// }
+// function rememberUrgently(task) {   // add from front
+//     return todoList.unshift(task);
+// }
+// remember("groceries");
+// remember("desserts");
+// remember("maggie");
+// console.log(rememberUrgently("icecream"));
+// remember("icecream");
+// console.log(todoList);
+
+// console.log(todoList.indexOf('icecream'));
+// console.log(todoList.lastIndexOf('icecream'));
+
+// remove();
+// console.log(todoList);
+
+
+
+// function conSlice(array,index){
+//     return array.slice(0, index).concat(array.slice(index + 1));
+// }
+// console.log(conSlice(["a", "b", "c", "d", "e"],2));
+
+//rest parameters 
+// function max(...numbers) {  
+//     let result = -Infinity;
+//     for(let number of numbers) {
+//         if(number > result) result = number;
+//     }
+//     return result;
+// }
+// console.log(max(4, 1, 9, -2));
+
+
+
+// let numbers = [5, 7, 1];
+// console.log(max(...numbers));
+
+
+// let words = ["never", 'fully'];
+// console.log(["will", ...words, "understand"]);
+ 
+// // array lifo
+// let arr = ["apple", "mango", "banana", "kiwi", "orange"]
+// console.log(arr[0]);
+// console.log(arr[4]);
+// arr.push("custurd apple");
+// arr.shift()
+// console.log(arr);
+
+
+// let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(num.length);
+// console.log(num[4]);
+
+// for (let i = 0; i <= num.length; i++){
+//     if(i % 2 == 0){
+//         console.log(i);
+//     }
+// }
+// for (let i = 0; i <= num.length; i++){
+//     num.indexOf(i);
+// }
+// console.log(num);
+
+
+
+
+// // let day1 = {
+// //     squirrel : false,
+// //     events : ["work", "touched tree", "pizza", "running"]
+// // };
+  
+// // he collects many of these entry in arrays 
+// let journal = [
+//     {
+//         squirrel : false,
+//         events : ["work", "touched tree", "pizza", "running"]
+//     },
+//     {
+//         squirrel : true,
+//         events : ["weekend", "touched tree", "peanuts", "running"]
+//     }
+// ];
+
+// console.log(journal);
+// // adding new arrays 
+
+// function addEntry(events, squirrel) {
+//     journal.push({events, squirrel});
+// }
+
+// addEntry("brushed teeth", true);
+
+// console.log(journal);
+
+// function phi([n00, n01, n10, n11]) {
+//     return (n11 * n00 - n01 * n10) /
+//     Math.sqrt((n10 + n11) * (n00 + n01) * (n10 + n00) * (n01 + n11));
+// } 
