@@ -1042,3 +1042,47 @@ for (let i = 1; i <= 7; i++) {
 //         console.log(event + ":", correlation);
 //     }
 // }
+
+
+// let student = {
+//     name: "Riya",
+//     age: 18,
+//     isGraduated: false,
+// };
+// console.log(student);
+
+// console.log(student.name);
+// console.log(student.age);
+// console.log(student.isGraduated);
+// console.log(student.hobbies);    // undefine
+
+// student.hobbies = ["art", "crochet", "mehendi"];
+// console.log(student.hobbies);
+
+// console.log(student);
+
+// for(let i in student) {
+//     console.log(i, "->", student[i]);
+// }
+
+// let book = {
+//     title: "Do it today",
+//     author: "Darius Foroux",
+//     pages: 180
+// }
+// console.log(book);
+// book.pages =  200
+// console.log(book);
+
+// // when a function is inside method we call it a method
+// let car = {
+//     brand: "Toyota Corolla Altis",
+//     model: "E140",
+//     year: 2006 
+// }
+// car.start = function() {
+//     console.log("Car is starting...");   // start is a metthod 
+// }
+// car.start();
+// console.log(car);
+
