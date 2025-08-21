@@ -979,11 +979,11 @@ for (let i = 1; i <= 7; i++) {
 //         squirrel: false
 //     },
 //     {
-//         events: ["work", "icecream", "cauliflower", "lasagna", "touched tree", "brushed teeth"],
+//         events: ["work", "icecream", "cauliflower", "lasagna", "touched tree", "brushed teeth", "alcohol"],
 //         squirrel: false
 //     },
 //     {
-//         events: ["weekend", "cycling", "break", "peanuts", "beer"],
+//         events: ["weekend", "cycling", "break", "peanuts", "alochol"],
 //         squirrel: true
 //     }
 // ];
@@ -993,15 +993,9 @@ for (let i = 1; i <= 7; i++) {
 // }
 
 // addEntry(["weekend", "break", "peanuts", "beer"], true);
+// addEntry(["weekend", "break", "peanuts", "alcohol"], true);
+// addEntry(["weekend", "break", "brushed teeth", "alcohol"], false);
 // console.log(journal);
-
-
-// // function phi([n00, n01, n10, n11]) {
-// //     return (n11 * n00 - n01 * n10) /
-// //     Math.sqrt((n10 + n11) * (n00 + n01) * (n10 + n00) * (n01 + n11));
-// // } 
-
-// // console.log(phi([76, 9, 4, 1]));
 
 // function phi(table) {
 //     return (table[3] * table[0] - table[2] * table[1]) / 
@@ -1022,8 +1016,29 @@ for (let i = 1; i <= 7; i++) {
 //     }
 //     return table;
 // }
-
 // console.log(tableFor("pizza", journal));
 
+// function journalEvents(journal) {
+//     let events = [];
+//     for (let entry  of journal) {
+//         for (let event of entry.events) {
+//             if(!events.includes(event)) {
+//                 events.push(event);
+//             }
+//         }
+//     }
+//     return events;
+// }
+// console.log(journalEvents(journal));
 
 
+// for (let event of journalEvents(journal)) {
+//     console.log(event + ":", phi(tableFor(event, journal)))
+// }
+
+// for (let event of journalEvents(journal)) {
+//     let correlation = phi(tableFor(event, journal));
+//     if(correlation > 0.1 || correlation < -0.1) {
+//         console.log(event + ":", correlation);
+//     }
+// }
