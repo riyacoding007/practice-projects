@@ -1086,3 +1086,87 @@ for (let i = 1; i <= 7; i++) {
 // car.start();
 // console.log(car);
 
+let library = {
+    name: "The Bookworm's Retreat",
+    location: "Andheri West",
+    books: {
+        "Do it Today": {
+            author: "Darious Foroux",
+            available: true
+        },
+        "Eloquent JavaScript": {
+            author: "Marijn Haverbeke", 
+            available: true 
+        },
+        "Clean Code": {
+            author: "Robert C. Martin",
+            available: false
+        }
+    },
+
+// Add a members object to the library. Each key is a member’s name, value is an object { borrowed: [] }.
+    members: {
+        "Riya": [],
+        "Pooja": []
+    },
+
+
+// listBooks() → prints all book titles and their availability
+    listBooks: function() {
+        for (let key in this.books){
+            console.log(key, this.books[key].available)
+        }
+    },
+
+//addBook(title, author) → adds a new book object under books
+    addBooks: function(title,author) {
+        this.books[title] = {author, available: true};
+    },
+
+//borrowBook(title) → sets available = false if the book exists and is available, else prints error
+
+// Update borrowBook(title, memberName) so that:
+
+// If available, mark the book unavailable and push it into that member’s borrowed list.
+
+// If not available, print "Book already borrowed".
+    borrowBook: function(title, memberName) {
+        if (!this.books[title]) {
+            console.log("Book not found");
+        }
+        else if (this.books[title].available === true) {
+            this.members[memberName].push(this.books[title]);
+            this.books[title].available = false;
+        }else {
+            console.log("Book already borrowed")
+        }
+    },
+
+//returnBook(title) → sets available = true if the book exists and was borrowed
+
+// Update returnBook(title, memberName) so it removes the book from the member’s borrowed list.
+    returnBook: function(title, memberName) {
+        if (!this.books[title]) {
+            console.log("Book not found");
+        }
+        else if (this.books[title].available === false) {
+            return this.books[title].available = true;
+        }
+    }
+}
+
+// library.listBooks();
+// library.addBooks("Verity", "Colleen Hoover");
+library.addBooks("Verity", "Colleen Hoover");
+library.addBooks("Haunting adeline", "H. D. Carlton");
+library.addBooks("Hunting adeline", "H. D. Carlton");
+library.addBooks("The Silent Patient", "Alex Michaeliides");
+
+library.borrowBook("Do it Today", "Pooja");
+library.borrowBook("Hunting adeline", "Riya");
+
+library.returnBook("Hunting adeline", "Riya");
+
+console.log(library.books);
+
+console.log(library.members)
