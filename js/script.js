@@ -1146,11 +1146,9 @@ let library = {
 
 // Update returnBook(title, memberName) so it removes the book from the member’s borrowed list.
     returnBook: function(title, memberName) {
-        if (!this.books[title]) {
-            console.log("Book not found");
-        }
-        else if (this.books[title].available === false) {
-            return this.books[title].available = true;
+        if (this.books[title].available === false) {
+            this.members[memberName].pop(this.books[title]);
+            this.books[title].available = true;
         }
     }
 }
@@ -1164,9 +1162,11 @@ library.addBooks("The Silent Patient", "Alex Michaeliides");
 
 library.borrowBook("Do it Today", "Pooja");
 library.borrowBook("Hunting adeline", "Riya");
-
+library.borrowBook("Haunting adeline", "Riya");
 library.returnBook("Hunting adeline", "Riya");
 
+
+library.borrowBook("hgfvgjet", "Pooja");
 console.log(library.books);
 
-console.log(library.members)
+console.log(library.members);
