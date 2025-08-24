@@ -63,4 +63,10 @@ body {
     border-radius: .5em;
     text-align: center;
     align-content: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition over 0.3 seconds */
 }
+
+.gallery img:hover {
+    transform: scale(1.2); /* Scales the element to 120% of its original size */
+}
+
