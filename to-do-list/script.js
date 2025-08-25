@@ -16,6 +16,11 @@ function createNewTaskItem(taskText) {
     const newElement = document.createElement("li");  // new list ( <li> ) created
     newElement.textContent = taskText;
 
+    // Add event listener to mark task as completed
+    newElement.addEventListener("click", function() {
+        toggleTaskCompleted(newElement);
+    });
+
     return newElement
 }
 // function to add task
@@ -32,4 +37,17 @@ function addTask() {
 addButton.addEventListener("click", addTask);
 
 
+function toggleTaskCompleted(taskItem) {
+  taskItem.classList.toggle("completed");
+  
+  if (taskItem.classList.contains("completed")) {
+    if (confirm("Task completed. Do you want to delete it?")) {
+      removeTask(taskItem);
+    }
+  }
+}
 
+
+function removeTask(taskItem) {
+  taskItem.remove();
+}
