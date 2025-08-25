@@ -1100,14 +1100,14 @@ let library = {
         },
         "Clean Code": {
             author: "Robert C. Martin",
-            available: false
+            available: true
         }
     },
 
 // Add a members object to the library. Each key is a member’s name, value is an object { borrowed: [] }.
     members: {
-        "Riya": [],
-        "Pooja": []
+        "Riya": {borrowed: []},
+        "Pooja": {borrowed: []}
     },
 
 
@@ -1124,49 +1124,68 @@ let library = {
     },
 
 //borrowBook(title) → sets available = false if the book exists and is available, else prints error
-
-// Update borrowBook(title, memberName) so that:
-
-// If available, mark the book unavailable and push it into that member’s borrowed list.
-
-// If not available, print "Book already borrowed".
-    borrowBook: function(title, memberName) {
+    borrowBook: function(title, memberName, dueDate) {
         if (!this.books[title]) {
             console.log("Book not found");
         }
         else if (this.books[title].available === true) {
-            this.members[memberName].push(this.books[title]);
             this.books[title].available = false;
+            this.members[memberName].borrowed.push({title, dueDate});
         }else {
-            console.log("Book already borrowed")
+            console.log("Book already borrowed");
         }
     },
 
 //returnBook(title) → sets available = true if the book exists and was borrowed
 
-// Update returnBook(title, memberName) so it removes the book from the member’s borrowed list.
-    returnBook: function(title, memberName) {
-        if (this.books[title].available === false) {
-            this.members[memberName].pop(this.books[title]);
-            this.books[title].available = true;
+returnBook: function(title, memberName) {
+    if (!this.books[title]) {
+        console.log("Book not found");
+    } 
+    // check if the borrowed array does NOT contain the title
+    else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
+        console.log("You can’t return what you didn’t borrow!");
+    } 
+    else {
+        // remove the title from member’s borrowed list
+        this.members[memberName].borrowed.shift([title]);
+        this.books[title].available = true;
+    }
+},
+// New method: findBooks(keyword) → search by keyword in title or author.
+     
+     findBooks: function(keyword) {
+        for(let title in library.books){
+            if(keyword === library.books[title]) {
+                console.log(library.books[title]);
+            }
         }
+      },
+
+// New method: listBorrowed(memberName) → shows all titles borrowed by that member.
+    listBorrowed: function(memberName) {
+            console.log(this.members[memberName].borrowed);
     }
 }
+
 
 // library.listBooks();
 // library.addBooks("Verity", "Colleen Hoover");
 library.addBooks("Verity", "Colleen Hoover");
 library.addBooks("Haunting adeline", "H. D. Carlton");
 library.addBooks("Hunting adeline", "H. D. Carlton");
-library.addBooks("The Silent Patient", "Alex Michaeliides");
+library.addBooks("The Silent Patient", "Alex Michaelides");
 
-library.borrowBook("Do it Today", "Pooja");
-library.borrowBook("Hunting adeline", "Riya");
-library.borrowBook("Haunting adeline", "Riya");
-library.returnBook("Hunting adeline", "Riya");
+library.borrowBook("Do it Today", "Pooja", "22-8-2025");    //borroowd
+library.borrowBook("Haunting adeline", "Riya", "22-8-2025");   // borrow 
+library.borrowBook("Hunting adeline", "Riya", "22-8-2025");   // borrow
+library.returnBook("Haunting adeline", "Riya");      // return
+library.borrowBook("Verity", "Riya", "23-8-2025");   // borrow 
 
+library.listBorrowed("Riya")   //  check riyas list of books
 
-library.borrowBook("hgfvgjet", "Pooja");
+library.findBooks("Haunting adeline");
+
 console.log(library.books);
 
 console.log(library.members);
