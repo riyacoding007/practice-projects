@@ -14,9 +14,11 @@ h1{
 ul {
     list-style-type: none;
     border: 2px solid black;
-    margin: 100px;
+    margin: 20px;
     min-height: 50px;
+    padding: 10px;
 }
+
 /* li {
     border: 2px solid black;
     width: 50px 10px;
