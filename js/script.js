@@ -1128,7 +1128,7 @@ let library = {
         if (!this.books[title]) {
             console.log("Book not found");
         }
-        if (!this.members[memberName]) {
+        else if (!this.members[memberName]) {
             console.log("Member not found");
             return;
         }
@@ -1145,6 +1145,11 @@ let library = {
         if (!this.books[title]) {
             console.log("Book not found");
         } 
+
+        else if (!this.members[memberName]) {
+            console.log("Member not found");
+            return;
+        }
         // check if the borrowed array does NOT contain the title
         else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
             console.log("You can’t return what you didn’t borrow!");
