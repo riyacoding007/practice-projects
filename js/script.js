@@ -1128,6 +1128,10 @@ let library = {
         if (!this.books[title]) {
             console.log("Book not found");
         }
+        if (!this.members[memberName]) {
+            console.log("Member not found");
+            return;
+        }
         else if (this.books[title].available === true) {
             this.books[title].available = false;
             this.members[memberName].borrowed.push({title, dueDate});
@@ -1137,37 +1141,64 @@ let library = {
     },
 
 //returnBook(title) → sets available = true if the book exists and was borrowed
+    returnBook: function(title, memberName) {
+        if (!this.books[title]) {
+            console.log("Book not found");
+        } 
+        // check if the borrowed array does NOT contain the title
+        else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
+            console.log("You can’t return what you didn’t borrow!");
+        } 
+        else {
+            // remove the title from member’s borrowed list
+            this.members[memberName].borrowed = this.members[memberName].borrowed.filter(b => b.title !== title);
+        }
+    },
 
-returnBook: function(title, memberName) {
-    if (!this.books[title]) {
-        console.log("Book not found");
-    } 
-    // check if the borrowed array does NOT contain the title
-    else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
-        console.log("You can’t return what you didn’t borrow!");
-    } 
-    else {
-        // remove the title from member’s borrowed list
-        this.members[memberName].borrowed.shift([title]);
-        this.books[title].available = true;
-    }
-},
 // New method: findBooks(keyword) → search by keyword in title or author.
-     
-     findBooks: function(keyword) {
-        for(let title in library.books){
-            if(keyword === library.books[title]) {
-                console.log(library.books[title]);
+    findBooks: function(keyword) {
+        keyword = keyword.toLowerCase();
+
+        let results = [];
+
+        for (let title in this.books) {
+            let author = this.books[title].author.toLowerCase();
+            if (title.toLowerCase().includes(keyword) || author.includes(keyword)) {
+                results.push(title);
             }
         }
-      },
-
+        return results;
+    },
+    
 // New method: listBorrowed(memberName) → shows all titles borrowed by that member.
     listBorrowed: function(memberName) {
             console.log(this.members[memberName].borrowed);
-    }
-}
+    },
 
+
+// countAvailableBooks() → number of books still free.
+    countAvailableBooks: function() {
+        let availableCount = 0;
+        for (let title in this.books) {
+            if(this.books[title].available == true) {
+                availableCount++;
+            }
+        }
+        return availableCount;
+    },
+
+
+//countBorrowedBooks() → number of books currently out.
+    countBorrowedBooks: function() {
+        let borrowedCount = 0;
+        for (let title in this.books) {
+            if(this.books[title].available != true) {
+                borrowedCount++;
+            }
+        }
+        return borrowedCount;
+    }
+};
 
 // library.listBooks();
 // library.addBooks("Verity", "Colleen Hoover");
@@ -1189,3 +1220,9 @@ library.findBooks("Haunting adeline");
 console.log(library.books);
 
 console.log(library.members);
+
+
+
+console.log(library.findBooks("adeline"));
+console.log(library.countAvailableBooks());
+console.log(library.countBorrowedBooks());
