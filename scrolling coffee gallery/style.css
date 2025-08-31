@@ -14,8 +14,6 @@ body {
 }
 section {
     display: flex;
-    flex-direction: row;
-    border: 1px solid #141e2e;
     height: 100vh; /* Set a height so the columns have vertical space to fill */
 }
 .left-column {
