@@ -1,0 +1,28 @@
+:root {
+    --bg-primary: #141e2e;
+    --bg-right: #F1F0E4;
+    --bg-latte: #DBDBDB;
+    --bg-macchiato: #BDB395;
+    --bg-black-coffee: #854836;
+    --bg-espresso: #AB886D;
+    --bg-mocha: #BCA88D;
+
+}
+body {
+    margin: 0;
+    width: 100%;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #141e2e;
+    height: 100vh; /* Set a height so the columns have vertical space to fill */
+}
+.left-column {
+    background-color: var(--bg-latte); /* creamy */
+    flex: 1; /* Make the left column take up an equal share of the space */
+}
+.right-column {
+    background-color: var(--bg-right);
+    flex: 1; /* Make the left column take up an equal share of the space */
+}
