@@ -59,3 +59,11 @@ section {
     background-color: var(--bg-mocha);
 }
 
+.left-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-column img{
+    width: 50%;
+}
