@@ -19,7 +19,7 @@ gsap.utils.toArray(".coffee-section").forEach((section, index) => {
   // image enters from left, slightly scaled
   tl.from(img, {
     opacity: 0,
-    y: -120,
+    x: -120,
     scale: 0,
     duration: 0.85,
     ease: "power3.out"
@@ -28,7 +28,7 @@ gsap.utils.toArray(".coffee-section").forEach((section, index) => {
   // title + paragraph slide in from right with overlap
   tl.from(title, {
     opacity: 0,
-    y: 80,
+    x: 80,
     duration: 0.6,
     ease: "power3.out"
   }, "-=0.45");
@@ -40,6 +40,6 @@ gsap.utils.toArray(".coffee-section").forEach((section, index) => {
     ease: "power3.out"
   }, "-=0.45");
 });
-
+ 
 
 
