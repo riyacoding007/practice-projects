@@ -1086,148 +1086,212 @@ for (let i = 1; i <= 7; i++) {
 // car.start();
 // console.log(car);
 
-let library = {
-    name: "The Bookworm's Retreat",
-    location: "Andheri West",
-    books: {
-        "Do it Today": {
-            author: "Darious Foroux",
-            available: true
-        },
-        "Eloquent JavaScript": {
-            author: "Marijn Haverbeke", 
-            available: true 
-        },
-        "Clean Code": {
-            author: "Robert C. Martin",
-            available: true
-        }
-    },
+// let library = {
+//     name: "The Bookworm's Retreat",
+//     location: "Andheri West",
+//     books: {
+//         "Do it Today": {
+//             author: "Darious Foroux",
+//             available: true
+//         },
+//         "Eloquent JavaScript": {
+//             author: "Marijn Haverbeke", 
+//             available: true 
+//         },
+//         "Clean Code": {
+//             author: "Robert C. Martin",
+//             available: true
+//         }
+//     },
 
-// Add a members object to the library. Each key is a member’s name, value is an object { borrowed: [] }.
-    members: {
-        "Riya": {borrowed: []},
-        "Pooja": {borrowed: []}
-    },
+// // Add a members object to the library. Each key is a member’s name, value is an object { borrowed: [] }.
+//     members: {
+//         "Riya": {borrowed: []},
+//         "Pooja": {borrowed: []}
+//     },
 
 
-// listBooks() → prints all book titles and their availability
-    listBooks: function() {
-        for (let key in this.books){
-            console.log(key, this.books[key].available)
-        }
-    },
+// // listBooks() → prints all book titles and their availability
+//     listBooks: function() {
+//         for (let key in this.books){
+//             console.log(key, this.books[key].available);
+//         }
+//     },
 
-//addBook(title, author) → adds a new book object under books
-    addBooks: function(title,author) {
-        this.books[title] = {author, available: true};
-    },
+// //addBook(title, author) → adds a new book object under books
+//     addBooks: function(title,author) {
+//         this.books[title] = {author, available: true};
+//     },
 
-//borrowBook(title) → sets available = false if the book exists and is available, else prints error
-    borrowBook: function(title, memberName, dueDate) {
-        if (!this.books[title]) {
-            console.log("Book not found");
-        }
-        else if (!this.members[memberName]) {
-            console.log("Member not found");
-            return;
-        }
-        else if (this.books[title].available === true) {
-            this.books[title].available = false;
-            this.members[memberName].borrowed.push({title, dueDate});
-        }else {
-            console.log("Book already borrowed");
-        }
-    },
+// //borrowBook(title) → sets available = false if the book exists and is available, else prints error
+//     borrowBook: function(title, memberName, dueDate) {
+//         if (!this.books[title]) {
+//             console.log("Book not found");
+//         }
+//         else if (!this.members[memberName]) {
+//             console.log("Member not found");
+//             return;
+//         }
+//         else if (this.books[title].available === true) {
+//             this.books[title].available = false;
+//             this.members[memberName].borrowed.push({title, dueDate});
+//         }else {
+//             console.log("Book already borrowed");
+//         }
+//     },
 
-//returnBook(title) → sets available = true if the book exists and was borrowed
-    returnBook: function(title, memberName) {
-        if (!this.books[title]) {
-            console.log("Book not found");
-        } 
+// //returnBook(title) → sets available = true if the book exists and was borrowed
+//     returnBook: function(title, memberName) {
+//         if (!this.books[title]) {
+//             console.log("Book not found");
+//         } 
 
-        else if (!this.members[memberName]) {
-            console.log("Member not found");
-            return;
-        }
-        // check if the borrowed array does NOT contain the title
-        else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
-            console.log("You can’t return what you didn’t borrow!");
-        } 
-        else {
-            // remove the title from member’s borrowed list
-            this.members[memberName].borrowed = this.members[memberName].borrowed.filter(b => b.title !== title);
-        }
-    },
+//         else if (!this.members[memberName]) {
+//             console.log("Member not found");
+//             return;
+//         }
+//         // check if the borrowed array does NOT contain the title
+//         else if (!this.members[memberName].borrowed.some(b => b.title === title)) {
+//             console.log("You can’t return what you didn’t borrow!");
+//         } 
+//         else {
+//             // remove the title from member’s borrowed list
+//             this.members[memberName].borrowed = this.members[memberName].borrowed.filter(b => b.title !== title);
+//         }
+//     },
 
-// New method: findBooks(keyword) → search by keyword in title or author.
-    findBooks: function(keyword) {
-        keyword = keyword.toLowerCase();
+// // New method: findBooks(keyword) → search by keyword in title or author.
+//     findBooks: function(keyword) {
+//         keyword = keyword.toLowerCase();
 
-        let results = [];
+//         let results = [];
 
-        for (let title in this.books) {
-            let author = this.books[title].author.toLowerCase();
-            if (title.toLowerCase().includes(keyword) || author.includes(keyword)) {
-                results.push(title);
-            }
-        }
-        return results;
-    },
+//         for (let title in this.books) {
+//             let author = this.books[title].author.toLowerCase();
+//             if (title.toLowerCase().includes(keyword) || author.includes(keyword)) {
+//                 results.push(title);
+//             }
+//         }
+//         return results;
+//     },
     
-// New method: listBorrowed(memberName) → shows all titles borrowed by that member.
-    listBorrowed: function(memberName) {
-            console.log(this.members[memberName].borrowed);
-    },
+// // New method: listBorrowed(memberName) → shows all titles borrowed by that member.
+//     listBorrowed: function(memberName) {
+//             console.log(this.members[memberName].borrowed);
+//     },
 
 
-// countAvailableBooks() → number of books still free.
-    countAvailableBooks: function() {
-        let availableCount = 0;
-        for (let title in this.books) {
-            if(this.books[title].available == true) {
-                availableCount++;
-            }
-        }
-        return availableCount;
-    },
+// // countAvailableBooks() → number of books still free.
+//     countAvailableBooks: function() {
+//         let availableCount = 0;
+//         for (let title in this.books) {
+//             if(this.books[title].available == true) {
+//                 availableCount++;
+//             }
+//         }
+//         return availableCount;
+//     },
 
 
-//countBorrowedBooks() → number of books currently out.
-    countBorrowedBooks: function() {
-        let borrowedCount = 0;
-        for (let title in this.books) {
-            if(this.books[title].available != true) {
-                borrowedCount++;
-            }
-        }
-        return borrowedCount;
-    }
-};
+// //countBorrowedBooks() → number of books currently out.
+//     countBorrowedBooks: function() {
+//         let borrowedCount = 0;
+//         for (let title in this.books) {
+//             if(this.books[title].available != true) {
+//                 borrowedCount++;
+//             }
+//         }
+//         return borrowedCount;
+//     }
+// };
 
-// library.listBooks();
+// // library.listBooks();
+// // library.addBooks("Verity", "Colleen Hoover");
 // library.addBooks("Verity", "Colleen Hoover");
-library.addBooks("Verity", "Colleen Hoover");
-library.addBooks("Haunting adeline", "H. D. Carlton");
-library.addBooks("Hunting adeline", "H. D. Carlton");
-library.addBooks("The Silent Patient", "Alex Michaelides");
+// library.addBooks("Haunting adeline", "H. D. Carlton");
+// library.addBooks("Hunting adeline", "H. D. Carlton");
+// library.addBooks("The Silent Patient", "Alex Michaelides");
 
-library.borrowBook("Do it Today", "Pooja", "22-8-2025");    //borroowd
-library.borrowBook("Haunting adeline", "Riya", "22-8-2025");   // borrow 
-library.borrowBook("Hunting adeline", "Riya", "22-8-2025");   // borrow
-library.returnBook("Haunting adeline", "Riya");      // return
-library.borrowBook("Verity", "Riya", "23-8-2025");   // borrow 
+// library.borrowBook("Do it Today", "Pooja", "22-8-2025");    //borroowd
+// library.borrowBook("Haunting adeline", "Riya", "22-8-2025");   // borrow 
+// library.borrowBook("Hunting adeline", "Riya", "22-8-2025");   // borrow
+// library.returnBook("Haunting adeline", "Riya");      // return
+// library.borrowBook("Verity", "Riya", "23-8-2025");   // borrow 
 
-library.listBorrowed("Riya")   //  check riyas list of books
+// library.listBorrowed("Riya")   //  check riyas list of books
 
-library.findBooks("Haunting adeline");
+// library.findBooks("Haunting adeline");
 
-console.log(library.books);
+// console.log(library.books);
 
-console.log(library.members);
-
+// console.log(library.members);
 
 
-console.log(library.findBooks("adeline"));
-console.log(library.countAvailableBooks());
-console.log(library.countBorrowedBooks());
+
+// console.log(library.findBooks("adeline"));
+// console.log(library.countAvailableBooks());
+// console.log(library.countBorrowedBooks());
+
+
+cart = {
+    item: {
+        "crochet" :  {
+            price: 200,
+            quantity: 1
+        },
+        "silkCrochet": {
+            price: 200,
+            quantity: 1
+        }
+    },
+    addItem: function(name, price, quantity) {
+        if(this.item[name]){
+            this.item[name].quantity += quantity;
+        }else{
+            this.item[name] = {price,quantity};
+        }
+    },
+    updateQuantity: function(name, quantity) {
+        for(let title in this.item){
+        if(this.item[title].quantity == 0){
+            delete this.item[name];
+        }else{
+            this.item[name].quantity = quantity;
+        }
+        }
+    },
+    removeItem: function(name) {
+        delete this.item[name];
+    },
+    viewCart: function() {
+        for(let title in this.item){
+            subtotal = this.item[title].price * this.item[title].quantity;
+            console.log(`${title} ${this.item[title].quantity} -> ${subtotal}`);
+        }
+    },
+    getTotal: function() {
+        this.total = 0;
+        for(let title in this.item){
+            let subtotal = this.item[title].price * this.item[title].quantity;
+            this.total += subtotal;
+        }
+        return this.total;
+    },
+
+    applyDiscount: function(code) {
+        percent = code.match(/\d+/);
+        offer = this.total / percent;
+        total = this.total - offer;
+        return total;
+    }
+}
+
+cart.addItem("book", 150, 1);
+cart.addItem("crochet", 200, 2);
+cart.addItem("icecream", 20, 2);
+cart.removeItem("icecream");
+cart.updateQuantity("crochet", 5);
+cart.viewCart();
+console.log(cart.getTotal());
+console.log(cart.applyDiscount("SAVE20"));
+console.log(cart.item);
