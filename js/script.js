@@ -1233,65 +1233,132 @@ for (let i = 1; i <= 7; i++) {
 // console.log(library.countBorrowedBooks());
 
 
-cart = {
-    item: {
-        "crochet" :  {
-            price: 200,
-            quantity: 1
-        },
-        "silkCrochet": {
-            price: 200,
-            quantity: 1
-        }
-    },
-    addItem: function(name, price, quantity) {
-        if(this.item[name]){
-            this.item[name].quantity += quantity;
-        }else{
-            this.item[name] = {price,quantity};
-        }
-    },
-    updateQuantity: function(name, quantity) {
-        for(let title in this.item){
-        if(this.item[title].quantity == 0){
-            delete this.item[name];
-        }else{
-            this.item[name].quantity = quantity;
-        }
-        }
-    },
-    removeItem: function(name) {
-        delete this.item[name];
-    },
-    viewCart: function() {
-        for(let title in this.item){
-            subtotal = this.item[title].price * this.item[title].quantity;
-            console.log(`${title} ${this.item[title].quantity} -> ${subtotal}`);
-        }
-    },
-    getTotal: function() {
-        this.total = 0;
-        for(let title in this.item){
-            let subtotal = this.item[title].price * this.item[title].quantity;
-            this.total += subtotal;
-        }
-        return this.total;
-    },
+// cart = {
+//     item: {
+//         "crochet" :  {
+//             price: 200,
+//             quantity: 1
+//         },
+//         "silkCrochet": {
+//             price: 200,
+//             quantity: 1
+//         }
+//     },
+//     addItem: function(name, price, quantity) {
+//         if(this.item[name]){
+//             this.item[name].quantity += quantity;
+//         }else{
+//             this.item[name] = {price,quantity};
+//         }
+//     },
+//     updateQuantity: function(name, quantity) {
+//         for(let title in this.item){
+//         if(this.item[title].quantity == 0){
+//             delete this.item[name];
+//         }else{
+//             this.item[name].quantity = quantity;
+//         }
+//         }
+//     },
+//     removeItem: function(name) {
+//         delete this.item[name];
+//     },
+//     viewCart: function() {
+//         for(let title in this.item){
+//             subtotal = this.item[title].price * this.item[title].quantity;
+//             console.log(`${title} ${this.item[title].quantity} -> ${subtotal}`);
+//         }
+//     },
+//     getTotal: function() {
+//         this.total = 0;
+//         for(let title in this.item){
+//             let subtotal = this.item[title].price * this.item[title].quantity;
+//             this.total += subtotal;
+//         }
+//         return this.total;
+//     },
 
-    applyDiscount: function(code) {
-        percent = code.match(/\d+/);
-        offer = this.total / percent;
-        total = this.total - offer;
-        return total;
+//     applyDiscount: function(code) {
+//         percent = code.match(/\d+/);
+//         offer = this.total / percent;
+//         total = this.total - offer;
+//         return total;
+//     }
+// }
+
+// cart.addItem("book", 150, 1);
+// cart.addItem("crochet", 200, 2);
+// cart.addItem("icecream", 20, 2);
+// cart.removeItem("icecream");
+// cart.updateQuantity("crochet", 5);
+// cart.viewCart();
+// console.log(cart.getTotal());
+// console.log(cart.applyDiscount("SAVE20"));
+// console.log(cart.item);
+
+
+let class_ = {
+    student: {
+        "Riya": {
+            "English": 48,
+             "Maths" : 95
+        },
+        "Pooja": {
+            "Maths" : 65,
+            "Science": 90
+        }
+    },
+    
+    addStudent: function(name){
+        if (!this.student[name]) {
+            this.student[name] = {};
+        }
+    },
+    addGrade: function(name, subject, grade){
+    if (!this.student) {
+      this.student = {};
+    }
+    if (!this.student[name]) {
+      this.student[name] = {};
+    }
+    this.student[name][subject] = grade ;
+    return name;
+    },
+    getAverage: function(name) {
+        totalCount = 0;
+        count = 0;
+        for(let key in this.student[name]){
+            totalCount += this.student[name][key];
+            count++
+        }
+        let average = totalCount/count;
+        return average;
+    },
+    getTopStudent: function() {
+        let topAverage = 0;
+        for(let name in this.student){
+            let totalCount = 0;
+            let count = 0;
+            for(let subject in this.student[name]) {
+                totalCount += this.student[name][subject];
+                count++;
+            }
+            let average = totalCount/count;
+            if(topAverage < average){
+                topAverage = average;
+            }
+        }
+        return topAverage;
+    },
+    listStudents: function() {
+        return Object.keys(class_.student)
     }
 }
 
-cart.addItem("book", 150, 1);
-cart.addItem("crochet", 200, 2);
-cart.addItem("icecream", 20, 2);
-cart.removeItem("icecream");
-cart.updateQuantity("crochet", 5);
-cart.viewCart();
-console.log(cart.getTotal());
-console.log(cart.applyDiscount("SAVE20"));
-console.log(cart.item);
+class_.addStudent("Yuvraj");
+class_.addGrade("Manthan", "Computer", 55);
+class_.addGrade("Yuvraj", "Computer", 55);
+console.log(class_.getAverage("Riya"));
+console.log(class_.getTopStudent());
+console.log(class_.listStudents());
+console.log(class_.student);
